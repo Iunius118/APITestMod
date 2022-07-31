@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="[42,)"
+license="Unlicense"
+
+[[mods]]
+modId="apitestmod"
+version="${file.jarVersion}"
+displayName="API Test Mod"
+# updateJSONURL=""
+# displayURL=""
+# logoFile=""
+credits=""
+authors=""
+description=""
+
+[[dependencies.apitestmod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[42,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.apitestmod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.1,1.20)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.apitestmod]]
+    modId="testapimod"
+    mandatory=true
+    versionRange="[1.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
