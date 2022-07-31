@@ -167,23 +167,6 @@ jar {
     }
 }
 
-task apiJar(type: Jar) {
-    archiveClassifier.set('api')
-    include 'com/github/iunius118/testapimod/api/**/*'
-    from sourceSets.main.allSource
-    from sourceSets.main.output
-}
-
-task sourcesJar(type: Jar) {
-    archiveClassifier.set('sources')
-    from sourceSets.main.allJava
-}
-
-artifacts {
-    archives apiJar
-    archives sourcesJar
-}
-
 // Example configuration to allow publishing using the maven-publish plugin
 // This is the preferred method to reobfuscate your jar file
 jar.finalizedBy('reobfJar')
@@ -195,8 +178,6 @@ publishing {
         mavenJava(MavenPublication) {
             artifactId = rootProject.name
             artifact jar
-            artifact apiJar
-            artifact sourcesJar
         }
     }
     repositories {
